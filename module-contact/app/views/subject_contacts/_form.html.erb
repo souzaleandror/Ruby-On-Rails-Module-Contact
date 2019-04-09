@@ -1,0 +1,32 @@
+<%= form_with(model: subject_contact, local: true) do |form| %>
+  <% if subject_contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subject_contact.errors.count, "error") %> prohibited this subject_contact from being saved:</h2>
+
+      <ul>
+      <% subject_contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :variable_name %>
+    <%= form.text_field :variable_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :inactive %>
+    <%= form.check_box :inactive %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

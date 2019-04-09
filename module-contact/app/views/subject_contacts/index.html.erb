@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Subject Contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Variable name</th>
+      <th>Inactive</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subject_contacts.each do |subject_contact| %>
+      <tr>
+        <td><%= subject_contact.name %></td>
+        <td><%= subject_contact.variable_name %></td>
+        <td><%= subject_contact.inactive %></td>
+        <td><%= link_to 'Show', subject_contact %></td>
+        <td><%= link_to 'Edit', edit_subject_contact_path(subject_contact) %></td>
+        <td><%= link_to 'Destroy', subject_contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subject Contact', new_subject_contact_path %>

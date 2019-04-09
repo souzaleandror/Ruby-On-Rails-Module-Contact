@@ -1,0 +1,2 @@
+class SubjectContact < ApplicationRecord
+end

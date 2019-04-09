@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @subject_contact.name %>
+</p>
+
+<p>
+  <strong>Variable name:</strong>
+  <%= @subject_contact.variable_name %>
+</p>
+
+<p>
+  <strong>Inactive:</strong>
+  <%= @subject_contact.inactive %>
+</p>
+
+<%= link_to 'Edit', edit_subject_contact_path(@subject_contact) %> |
+<%= link_to 'Back', subject_contacts_path %>

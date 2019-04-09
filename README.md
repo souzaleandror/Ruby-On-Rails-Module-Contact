@@ -8,9 +8,14 @@ I18n available's languages: |en|de|es|it|pt|fr|
 Send Email with SMTP (Gmail).
 
 Command for you use:
+$ sudo service postgresql start 
+$ cd Module-Contact
 $ bundle update
 $ bundle install
 $ rake db:drop db:create db:migrate db:seed
+$ rails s or rails s -p $PORT -b $IP
+
+Access your browser: http://0.0.0.0:8080 or http://localhost:8080
 
 Ruby Version:
 Ruby 2.4.5p335 (2018-10-18 revision 65137) [x86_64-linux]
@@ -23,3 +28,6 @@ PostGres Version :
 
 Gem's used:
 Devise (Login)
+Globalize
+Faker
+Rspec
