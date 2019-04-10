@@ -27,11 +27,11 @@ fr:
         message: "Message"
         newsletter: "Newsletter"
         accepted: "Accepted"
-  contact_us_mailer:
+  contact_mailer:
     automatic_answer:
       thank_you_for_contact: "Thank You For Contact"  
   mailers:
-    contact_us_mailer:
+    contact_mailer:
       automatic_answer:
         hi: "Hi"
         thank_you_for_contact: "Thank You For Contact"

@@ -13,6 +13,9 @@ require "action_view/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 require 'faker'
+require "active_storage/engine"
+require 'i18n/backend/fallbacks'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -29,6 +32,9 @@ module ModuleContact
     config.time_zone = 'Eastern Time (US & Canada)'
     config.encoding = "UTF-8"
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    Faker::Config.locale = 'en'
+    config.assets.enabled = true
+    config.assets.version = '1.0'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

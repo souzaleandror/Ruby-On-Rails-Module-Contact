@@ -1,4 +1,15 @@
 class ApplicationController < ActionController::Base
+  
+  $LOCALES = [['English','/en'],
+               ['Italiano', '/it'],
+               ['Portugues','/pt'],
+               ['Spanish', '/es'],
+               ['German','/de'],
+               ['French', '/fr']
+              ];
+  
+  before_action :set_locale
+  
   protect_from_forgery with: :exception
   protect_from_forgery with: :null_session
 
@@ -24,7 +35,7 @@ class ApplicationController < ActionController::Base
   # The new locale is taken from the current_user language setting, it logged_in, or from the http accept language header if not
   # In both cases, if a locale param has been passed, it takes precedence. Only available locales are accepted
   def the_new_locale
-    @arr_idioms = Idiom.select(:sigla).where(:inactive => false).map(&:sigla) 
+    @arr_idioms = ['en','it','pt','es','de','fr']
     new_locale = (params[:locale] || extract_locale_from_accept_language_header)
     @arr_idioms.include?(new_locale) ? new_locale : I18n.default_locale.to_s
   end

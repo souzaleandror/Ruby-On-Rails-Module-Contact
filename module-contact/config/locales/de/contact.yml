@@ -2,7 +2,7 @@
 de:
   home:
     index:
-      contact: "Contact"
+      contact: "Konkct"
       p_name: "Name"
       p_email: "Email"
       p_phone: "Telefon"
@@ -27,11 +27,11 @@ de:
         message: "Botschaft"
         newsletter: "Newsletter"
         accepted: "Akzeptiert"
-  contact_us_mailer:
+  contact_mailer:
     automatic_answer:
       thank_you_for_contact: "Vielen Dank für Ihren Kontakt"  
   mailers:
-    contact_us_mailer:
+    contact_mailer:
       automatic_answer:
         hi: "Hallo" 
         thank_you_for_message: "Danke für die Nachricht"

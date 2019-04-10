@@ -1,63 +1,64 @@
 <%= content_for(:title, t('.contact')) %>
 
-<section id="sessions" class="section">
-  <div class="container">
-
-    <%= select('idiom', 'idiom_id', [['English','/en'],['Italiano', '/it'],['Portugues','/pt'],['Spanish', '/es'],['German','/de'],['Italiano', '/it']], {include_blank: (t('select') + ' ' + t('language')), :selected => "/#{params[:locale]}"}, class: 'float_select_language_website c_black', id: 'select_language_website') %>
+<section id="sessions" class="section ">
+  <div class="container text-center">
     
     <%= form_with(model: @contact, url: create_contact_path, local: true, class: '', html: { id: 'form_contact', method: :post }) do |f| %>
+    
+      <%= select('idiom', 'idiom_id', $LOCALES, {include_blank: (t('select') + ' ' + t('language')), :selected => "/#{params[:locale]}"}, class: 'm_top_10', id: 'select_language_website') %>
+      
+      <h1 class="m_top_10"><%= t('.contact') %></h1>
 
-      <div class="row field m_top_10 col-md-4 col-sm-4 col-sm-offset-4">
+      <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.label :name, class: "required_colon" %><br />
         <%= f.text_field :name, class: 'form-control', placeholder: t('.p_name'), required: true, pattern: '.{3,64}', maxlength: 64, minlength: 3, id: 'form_contact_us_name', 'data-purpose' => 'name', 'aria-invalid' => 'true', autofocus: true, tabindex: 1 %>
       </div>
 
-      <div class="row field m_top_10 col-md-4 col-sm-4 col-sm-offset-4">
+      <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.label :email, class: "required_colon" %><br />
         <%= f.email_field :email, class: 'form-control lower_case', placeholder: t('.p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_us_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2 %>
       </div>
 
-      <div class="row field m_top_10 col-md-4 col-sm-4 col-sm-offset-4">
+      <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.label :phone, class: "colon" %><br />
         <%= f.text_field :phone, class: 'form-control', placeholder: t('.p_phone'), pattern: '.{3,20}', maxlength: 20, minlength: 5, id: 'form_contact_us_phone', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 3 %>
       </div>
 
-      <div class="row field m_top_10 col-md-4 col-sm-4 col-sm-offset-4">
+      <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.label :subject, class: "required_colon" %><br />
         <%= f.text_field :subject, class: 'form-control', placeholder: t('.p_subject'), required: true, pattern: '.{3,20}', maxlength: 20, minlength: 3, id: 'form_contact_us_subject', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 4 %>
       </div>
       
-      <div class="row field m_top_10 col-md-4 col-sm-4 col-sm-offset-4">
+      <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.label :subject_contact_id, class: "colon" %><br />
         <%= f.select(:subject_contact_id, @subject_contacts.all.collect {|p| [ p.name, p.id ] }, {include_blank: (t('.select') + ' ' + t('.subject'))}, {:class => "form-control"}) %>
       </div>
 
-      <div class="row field m_top_10 col-md-4 col-sm-4 col-sm-offset-4">
+      <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.label :message, class: "required_colon" %><br />
         <%= f.text_area :message, class: 'form-control', placeholder: t('.p_message'), required: true, pattern: ".{3,}", maxlength: 500, size: 500, minlength: 3, id: 'form_contact_us_message', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 5 %>
       </div>
 
-      <div class="row field m_top_10 col-md-4 col-sm-4 col-sm-offset-4">
+      <div class="row m_top_10 col-md-4 mx-auto">
         <%= f.check_box :newsletter, class: 'form-check-input', checked: 'checked', id: 'form_register_newsletter', tabindex: 6 %>
         <label class="form-check-label" for="form_register_newsletter">
           <%= t('.register_newsletter') %>
         </label>
       </div>
 
-      <div class="row field m_top_10 col-md-4 col-sm-4 col-sm-offset-4">
+      <div class="row m_top_10 col-md-4 mx-auto">
         <%= f.check_box :accepted, class: 'form-check-input', required: true, checked: 'checked', id: 'form_register_terms_and_privacy', tabindex: 7 %>
         <label class="form-check-label b_required" for="form_register_terms_and_privacy">
           <%= t('.accepted') %> 
-          <%= link_to t('.term_contact'), '#', target: '_blank', class: 'tc' %> 
+          <%= link_to t('.term_contact'), '#' %> 
         </label>
       </div>
 
-      <div class="row field m_top_10 col-md-4 col-sm-4 col-sm-offset-4">
+      <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%#= recaptcha_tags %>
       </div>
 
-      <%= hidden_field(:contact, :observation, value: 'w_contact') %>
-      <div class="row field m_top_10 col-md-4 col-sm-4 col-sm-offset-4">
+      <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.submit t('.send'), class: "btn btn-info btn-lg btn-block", tabindex: 8 %>
       </div>
     <% end %>

@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
+  
   def index
-    @subject_contacts = SubjectContact.select(:id, :name).order(name: :desc).where(:inactive => false)
+    @subject_contacts = SubjectContact.select(:id, :name).order(name: :desc).where(:inactive => false).includes(:translations).with_locales(I18n.available_locales)
     @contact = Contact.new
   end
   
@@ -9,7 +10,13 @@ class HomeController < ApplicationController
     
     respond_to do |format|
       if @contact.save
-        #ContactUsMailer.automatic_answer(@contact).deliver
+        ContactMailer.automatic_answer(@contact).deliver
+        
+        # if you have model Newsletter
+        # if (@contact.newsletter == true) && (!Newsletter.find_by_email(@contact.email)) then
+        #   Newsletter.create(name: @contact.name, email: @contact.email, inactive: false).save!
+        # end
+        
         format.html { redirect_to root_path, notice: "#{t('.thank_you_for_message')} \\n #{t('.we_will_respond_as_soon_as_possible')}" }
       else
         format.html { redirect_to root_path, notice: "#{t('.thank_you_for_message')} \\n #{t('.we_will_respond_as_soon_as_possible')}" }

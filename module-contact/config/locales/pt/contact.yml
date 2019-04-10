@@ -27,11 +27,11 @@ pt:
         message: "Mensagem"
         newsletter: "Newsletter"
         accepted: "Aceito"
-  contact_us_mailer:
+  contact_mailer:
     automatic_answer:
       thank_you_for_contact: "Obrigado por entrar em contato"  
   mailers:
-    contact_us_mailer:
+    contact_mailer:
       automatic_answer:
         hi: "Ola"
         thank_you_for_message: "Obrigado pela mensagem"
