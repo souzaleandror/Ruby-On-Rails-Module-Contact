@@ -1,0 +1,41 @@
+# encoding: utf-8
+es:
+  home:
+    index:
+      contact: "Contact"
+      p_name: "Nombre"
+      p_email: "Email"
+      p_phone: "Teléfono"
+      p_subject: "Asunto"
+      p_message: "Mensaje"
+      register_newsletter: "Registrarse Newsletter"
+      accepted: "Aceptado"
+      term_contact: "Término de contacto"
+      send: "Enviar"
+    create_contact:
+      thank_you_for_message: "Gracias por tu mensaje"
+      we_will_respond_as_soon_as_possible: "Le responderemos lo antes posible"
+      fail_send_your_message: "No enviar su mensaje"
+      try_again_later: "Inténtalo de nuevo más tarde"
+  helpers:
+    label:
+      contact:
+        name: "Nombre"
+        email: "Email"
+        phone: "Teléfono"
+        subject: "Asunto"
+        message: "Mensaje"
+        newsletter: "Registrarse Newsletter"
+        accepted: "Aceptado"
+  contact_us_mailer:
+    automatic_answer:
+      thank_you_for_contact: "Gracias por el contacto contigo"  
+  mailers:
+    contact_us_mailer:
+      automatic_answer:
+        hi: "Hola"  
+        thank_you_for_message: "Gracias por tu mensaje"
+        we_will_respond_as_soon_as_possible: "Le responderemos lo antes posible"
+        fail_send_your_message: "No enviar su mensaje"
+        try_again_later: "Inténtalo de nuevo más tarde"
+        go_back: "Regresa"

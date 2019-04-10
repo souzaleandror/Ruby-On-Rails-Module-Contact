@@ -1,0 +1,39 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.lower_case {
+    text-transform: lowercase !important;
+}
+
+.upper_case {
+    text-transform: uppercase !important;
+}
+
+label.colon:after {
+  content: " : ";
+}
+
+label.required:after {
+  content: " * ";
+}
+
+label.required_colon:after {
+  content: " * : ";
+}
+
+label.b_required:before {
+  content: " * ";
+}
+
+.b1 {
+  border: 2px solid red !important;
+}
+
+.b2 {
+  border: 2px solid green !important;
+}
+
+.b3 {
+  border: 2px solid orange !important;
+}
