@@ -12,7 +12,7 @@ require "action_view/railtie"
 # require "action_cable/engine"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
-require 'faker'
+# require 'faker'
 require "active_storage/engine"
 require 'i18n/backend/fallbacks'
 
@@ -32,7 +32,7 @@ module ModuleContact
     config.time_zone = 'Eastern Time (US & Canada)'
     config.encoding = "UTF-8"
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-    Faker::Config.locale = 'en'
+    # Faker::Config.locale = 'en'
     config.assets.enabled = true
     config.assets.version = '1.0'
 

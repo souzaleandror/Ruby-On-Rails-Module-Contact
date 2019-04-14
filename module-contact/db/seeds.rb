@@ -1,6 +1,6 @@
 # ruby encoding: utf-8
 
-require 'faker'
+# require 'faker'
 require 'time'
 
 puts 'START DESTROY ALL'
