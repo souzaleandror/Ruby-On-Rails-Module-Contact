@@ -2,7 +2,7 @@
 
 <h1>Subject Contacts</h1>
 
-<table>
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,7 +20,6 @@
         <td><%= subject_contact.inactive %></td>
         <td><%= link_to 'Show', subject_contact %></td>
         <td><%= link_to 'Edit', edit_subject_contact_path(subject_contact) %></td>
-        <td><%= link_to 'Destroy', subject_contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

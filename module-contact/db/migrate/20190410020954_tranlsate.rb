@@ -3,7 +3,8 @@ class Tranlsate < ActiveRecord::Migration[5.2]
     reversible do |dir|
       dir.up do
         SubjectContact.create_translation_table!({
-          :name => :string
+          :name => :string,
+          :variable_name => :string
         }, {
           :migrate_data => true
         })

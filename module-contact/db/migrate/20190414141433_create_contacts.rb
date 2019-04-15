@@ -9,6 +9,8 @@ class CreateContacts < ActiveRecord::Migration[5.2]
       t.text :message
       t.boolean :accepted
       t.boolean :newsletter
+      t.boolean :automatic_answer
+      t.boolean :manual_answer
 
       t.timestamps
     end

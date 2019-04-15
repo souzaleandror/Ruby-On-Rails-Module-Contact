@@ -1,0 +1,73 @@
+<% contact = @contact %>
+<%= form_with(model: contact, local: true) do |form| %>
+  <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :name, class: "required_colon" %><br />
+    <%= form.text_field :name, class: 'form-control', placeholder: t('.p_name'), required: true, pattern: '.{3,64}', maxlength: 64, minlength: 3, id: 'form_contact_name', 'data-purpose' => 'name', 'aria-invalid' => 'true', :disabled => true %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :email, class: "required_colon" %><br />
+    <%= form.text_field :email, class: 'form-control lower_case', placeholder: t('.p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2, :disabled => true %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :phone, class: "required_colon" %><br />
+    <%= form.text_field :phone, class: 'form-control lower_case', placeholder: t('.p_phone'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2, :disabled => true %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :subject, class: "required_colon" %><br />
+    <%= form.text_field :subject, class: 'form-control lower_case', placeholder: t('.p_subject'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2, :disabled => true %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :subject_contact_id, class: "required_colon" %><br />
+    <%= form.text_field :subject_contact_id, class: 'form-control lower_case', placeholder: t('.p_subject_contact_id'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2, :disabled => true %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :message, class: "required_colon" %><br />
+    <%= form.text_area :message, class: 'form-control lower_case', placeholder: t('.p_message'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2, :disabled => true %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :accepted, class: "required_colon" %><br />
+    <%= form.check_box :accepted, class: 'form-control lower_case', placeholder: t('.p_accepted'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2, :disabled => true %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :newsletter, class: "required_colon" %><br />
+    <%= form.check_box :newsletter, class: 'form-control lower_case', placeholder: t('.p_newsletter'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2, :disabled => true %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :automatic_answer, class: "required_colon" %><br />
+    <%= form.check_box :automatic_answer, class: 'form-control lower_case', placeholder: t('.p_automatic_answer'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2, :disabled => true %>
+  </div>
+
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :manual_answer, class: "required_colon" %><br />
+    <%= form.check_box :manual_answer, class: 'form-control lower_case', placeholder: t('.p_manual_answer'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2, :disabled => true %>
+  </div>
+  
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :answer, class: "required_colon" %><br />
+    <%= form.text_area :answer, class: 'form-control lower_case', placeholder: t('.p_answer'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 10, autofocus: true, required: true, pattern: '.{3,500}', minlength: 3, maxlength: 500 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

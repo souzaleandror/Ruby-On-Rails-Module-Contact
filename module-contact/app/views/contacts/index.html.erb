@@ -2,7 +2,7 @@
 
 <h1>Contacts</h1>
 
-<table>
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -13,7 +13,9 @@
       <th>Message</th>
       <th>Accepted</th>
       <th>Newsletter</th>
-      <th colspan="3"></th>
+      <th>Automatic answer</th>
+      <th>Manual answer</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -24,10 +26,13 @@
         <td><%= contact.email %></td>
         <td><%= contact.phone %></td>
         <td><%= contact.subject %></td>
-        <td><%= contact.subject_contact %></td>
-        <td><%= contact.message %></td>
+        <td><%= contact.subject_contact.name if contact.subject_contact.present? %></td>
+        <td><%=h truncate(contact.message, :length => 20) %></td>
         <td><%= contact.accepted %></td>
         <td><%= contact.newsletter %></td>
+        <td><%= contact.automatic_answer %></td>
+        <td><%= contact.manual_answer %></td>
+        <td><%= link_to 'Answer', answer_contact_path(contact) %></td>
         <td><%= link_to 'Show', contact %></td>
         <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
         <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>

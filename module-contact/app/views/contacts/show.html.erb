@@ -40,5 +40,15 @@
   <%= @contact.newsletter %>
 </p>
 
+<p>
+  <strong>Automatic answer:</strong>
+  <%= @contact.automatic_answer %>
+</p>
+
+<p>
+  <strong>Manual answer:</strong>
+  <%= @contact.manual_answer %>
+</p>
+
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>

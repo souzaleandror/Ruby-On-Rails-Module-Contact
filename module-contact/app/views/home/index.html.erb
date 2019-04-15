@@ -1,32 +1,27 @@
 <%= content_for(:title, t('.contact')) %>
 
-<section id="sessions" class="section ">
-  <div class="container text-center">
-    
     <%= form_with(model: @contact, url: create_contact_path, local: true, class: '', html: { id: 'form_contact', method: :post }) do |f| %>
-    
-      <%= select('idiom', 'idiom_id', $LOCALES, {include_blank: (t('select') + ' ' + t('language')), :selected => "/#{params[:locale]}"}, class: 'm_top_10', id: 'select_language_website') %>
       
       <h1 class="m_top_10"><%= t('.contact') %></h1>
 
       <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.label :name, class: "required_colon" %><br />
-        <%= f.text_field :name, class: 'form-control', placeholder: t('.p_name'), required: true, pattern: '.{3,64}', maxlength: 64, minlength: 3, id: 'form_contact_us_name', 'data-purpose' => 'name', 'aria-invalid' => 'true', autofocus: true, tabindex: 1 %>
+        <%= f.text_field :name, class: 'form-control', placeholder: t('.p_name'), required: true, pattern: '.{3,64}', maxlength: 64, minlength: 3, id: 'form_contact_name', 'data-purpose' => 'name', 'aria-invalid' => 'true', autofocus: true, tabindex: 1 %>
       </div>
 
       <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.label :email, class: "required_colon" %><br />
-        <%= f.email_field :email, class: 'form-control lower_case', placeholder: t('.p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_us_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2 %>
+        <%= f.email_field :email, class: 'form-control lower_case', placeholder: t('.p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2 %>
       </div>
 
       <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.label :phone, class: "colon" %><br />
-        <%= f.text_field :phone, class: 'form-control', placeholder: t('.p_phone'), pattern: '.{3,20}', maxlength: 20, minlength: 5, id: 'form_contact_us_phone', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 3 %>
+        <%= f.text_field :phone, class: 'form-control', placeholder: t('.p_phone'), pattern: '.{3,20}', maxlength: 20, minlength: 5, id: 'form_contact_phone', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 3 %>
       </div>
 
       <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.label :subject, class: "required_colon" %><br />
-        <%= f.text_field :subject, class: 'form-control', placeholder: t('.p_subject'), required: true, pattern: '.{3,20}', maxlength: 20, minlength: 3, id: 'form_contact_us_subject', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 4 %>
+        <%= f.text_field :subject, class: 'form-control', placeholder: t('.p_subject'), required: true, pattern: '.{3,20}', maxlength: 20, minlength: 3, id: 'form_contact_subject', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 4 %>
       </div>
       
       <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
@@ -36,7 +31,7 @@
 
       <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
         <%= f.label :message, class: "required_colon" %><br />
-        <%= f.text_area :message, class: 'form-control', placeholder: t('.p_message'), required: true, pattern: ".{3,}", maxlength: 500, size: 500, minlength: 3, id: 'form_contact_us_message', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 5 %>
+        <%= f.text_area :message, class: 'form-control', placeholder: t('.p_message'), required: true, pattern: ".{3,}", maxlength: 500, size: 500, minlength: 3, id: 'form_contact_message', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 5 %>
       </div>
 
       <div class="row m_top_10 col-md-4 mx-auto">
@@ -62,5 +57,3 @@
         <%= f.submit t('.send'), class: "btn btn-info btn-lg btn-block", tabindex: 8 %>
       </div>
     <% end %>
-  </div>
-</div>

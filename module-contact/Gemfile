@@ -46,6 +46,9 @@ gem 'globalize-accessors'
 gem 'globalize3_helpers', git: 'https://github.com/mathieumahe/globalize3_helpers.git'
 gem 'friendly_id-globalize'
 
+# Flexible authentication solution for Rails with Warden.
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

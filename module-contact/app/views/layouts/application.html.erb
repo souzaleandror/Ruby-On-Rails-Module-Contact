@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Module Contact - <%= yield :title %></title>
+    <% if content_for?(:title) %>
+      <title>Module Contact - <%= yield :title %></title>
+    <% else %>
+      <title>Module Contact</title>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,18 +18,28 @@
       <div class="container">
       <a class="navbar-brand" href="/">Our Logo</a>
       <form class="form-inline">
-        <a class="btn btn-outline-primary" href="/login" role="button">
-        Login
-        </a>
-        <div style="padding-left: 10px;">
-          <a class="btn btn-outline-success" href="/signup" role="button">
-          Sign Up
-          </a>
-        </div>
+        <% if (admin_signed_in?) %>
+          <%= link_to "Contacts", contacts_path, class: 'btn btn-outline-primary m_left_5' %>
+          <%= link_to "Subject Contacts", subject_contacts_path, class: 'btn btn-outline-primary m_left_5' %>
+          <%= link_to "Welcome Admin", welcome_index_path, class: 'btn btn-outline-primary m_left_5' %>
+          <%= link_to "Logout", destroy_admin_session_path, class: 'btn btn-outline-primary m_left_5', method: :delete %>
+        <% else %>
+          <%= link_to "Login", new_admin_session_path, class: 'btn btn-outline-primary' %>
+        <% end %>
+        <!--<div style="padding-left: 10px;">-->
+        <!--  <a class="btn btn-outline-success" href="/signup" role="button">-->
+        <!--  Sign Up-->
+        <!--  </a>-->
+        <!--</div>-->
       </form>
       </div>
     </nav>
-    <%= yield %>
+    <section id="sessions" class="section ">
+      <div class="container text-center">
+              <%= select('idiom', 'idiom_id', $LOCALES, {include_blank: (t('select') + ' ' + t('language')), :selected => "/#{params[:locale]}"}, class: 'm_top_10', id: 'select_language_website') %>
+        <%= yield %>
+      </div>
+    </section>
     
         <script type="text/javascript">
       

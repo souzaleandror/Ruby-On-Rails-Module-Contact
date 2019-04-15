@@ -1,5 +1,5 @@
 class SubjectContactsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_admin!
   before_action :set_subject_contact, only: [:show, :edit, :update, :destroy]
 
   # GET /subject_contacts
@@ -54,13 +54,13 @@ class SubjectContactsController < ApplicationController
 
   # DELETE /subject_contacts/1
   # DELETE /subject_contacts/1.json
-  def destroy
-    @subject_contact.destroy
-    respond_to do |format|
-      format.html { redirect_to subject_contacts_url, notice: 'Subject contact was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @subject_contact.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to subject_contacts_url, notice: 'Subject contact was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

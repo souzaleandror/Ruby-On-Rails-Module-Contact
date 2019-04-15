@@ -39,3 +39,16 @@ en:
         fail_send_your_message: "Fail Send Your Message"
         try_again_later: "Try Again Later"
         go_back: "Go Back"
+  welcome:
+    answer_contact:
+      contact: "Contact"
+      p_name: "Name"
+      p_email: "Email"
+      p_phone: "Phone"
+      p_subject: "Subject"
+      p_message: "Message"
+      p_answer: "Message..."
+      register_newsletter: "Register Newsletter"
+      accepted: "Accepted"
+      term_contact: "Term Contact"
+      send: "Send"

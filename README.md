@@ -1,43 +1,47 @@
 # Ruby-On-Rails-Module-Contact
 
-Project Contact.
-Simple Contact Form With Validation and I18n.
-Send Email of "Thank You For Contact" with specific idiom and Manual Send Email of Answer.
+Project Contact.<br/>
+Simple Contact Form With Validation and I18n.<br/>
+Send Email of "Thank You For Contact" with specific idiom and Manual Send Email of Answer.<br/>
 
-I18n available's languages: |en|de|es|it|pt|fr|
-Send Email with SMTP (Gmail).
+I18n available's languages: |en|de|es|it|pt|fr|<br/>
+Send Email with SMTP (Gmail).<br/>
 
-** IMPORTANT CONFIG YOUR EMAIL **
-development.rb
-production.rb
-test.rb
+** IMPORTANT CONFIG YOUR EMAIL **<br/>
+development.rb<br/>
+production.rb<br/>
+test.rb<br/>
 
-Command for you use:
-$ sudo service postgresql start 
-$ cd Module-Contact
-$ bundle update
-$ bundle install
-$ rake db:drop db:create db:migrate db:seed
-$ rails s or rails s -p $PORT -b $IP
+Command for you use:<br/>
+$ sudo service postgresql start <br/>
+$ cd Module-Contact<br/>
+$ bundle update<br/>
+$ bundle install<br/>
+$ rake db:drop db:create db:migrate db:seed<br/>
+$ rails s or rails s -p $PORT -b $IP<br/>
 
-Access your browser: http://0.0.0.0:8080 or http://localhost:8080
+Access your browser: http://0.0.0.0:8080 or http://localhost:8080<br/>
 
-Ruby Version:
-Ruby 2.4.5p335 (2018-10-18 revision 65137) [x86_64-linux]
+Admin's Area:
+Login: admin@admin.com
+Password: admin123
 
-Rails Version:
-Rails 5.2.3
+Ruby Version:<br/>
+Ruby 2.4.5p335 (2018-10-18 revision 65137) [x86_64-linux]<br/>
 
-PostGres Version :
-(PostgreSQL) 9.3.18
+Rails Version:<br/>
+Rails 5.2.3<br/>
 
-Gem's used:
-I18n
-Thin
-Devise (Login)
-Globalize
-Faker
-Rspec
+PostGres Version :<br/>
+(PostgreSQL) 9.3.18<br/>
 
-sudo service postgresql start 
+Gem's used:<br/>
+I18n<br/>
+Thin<br/>
+Devise (Login)<br/>
+Globalize<br/>
+Faker<br/>
+Rspec<br/>
+
+sudo service postgresql start
 rails s -p $PORT -b $IP
