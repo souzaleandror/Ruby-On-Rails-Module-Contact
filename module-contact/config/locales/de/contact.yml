@@ -30,9 +30,18 @@ de:
   contact_mailer:
     automatic_answer:
       thank_you_for_contact: "Vielen Dank für Ihren Kontakt"  
+    manual_answer:
+      thank_you_for_contact: "Vielen Dank für Ihren Kontakt" 
   mailers:
     contact_mailer:
       automatic_answer:
+        hi: "Hallo" 
+        thank_you_for_message: "Danke für die Nachricht"
+        we_will_respond_as_soon_as_possible: "Wir werden so schnell wie möglich antworten"
+        fail_send_your_message: "Fehler beim Senden Ihrer Nachricht"
+        try_again_later: "Versuchen Sie es später noch einmal"
+        go_back: "Geh zurück"
+      manual_answer:
         hi: "Hallo" 
         thank_you_for_message: "Danke für die Nachricht"
         we_will_respond_as_soon_as_possible: "Wir werden so schnell wie möglich antworten"

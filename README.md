@@ -11,6 +11,8 @@ Send Email with SMTP (Gmail).<br/>
 development.rb<br/>
 production.rb<br/>
 test.rb<br/>
+In Gmail Account to enable 'Less secure APP' in 'Google's Account' => Security<br>
+If you don't config your Gmail's Account don't work send the emails<br>
 
 Command for you use:<br/>
 $ sudo service postgresql start <br/>
@@ -21,6 +23,7 @@ $ rake db:drop db:create db:migrate db:seed<br/>
 $ rails s or rails s -p $PORT -b $IP<br/>
 
 Access your browser: http://0.0.0.0:8080 or http://localhost:8080<br/>
+For test send email preview: http://localhost:8080/rails/mailers/contact
 
 Admin's Area:
 Login: admin@admin.com
@@ -45,3 +48,4 @@ Rspec<br/>
 
 sudo service postgresql start
 rails s -p $PORT -b $IP
+heroku restart; heroku pg:reset DATABASE --confirm APP-NAME; heroku run rake db:migrate; heroku run rake db:seed;

@@ -15,16 +15,19 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
+    @subject_contacts = SubjectContact.all
     @contact = Contact.new
   end
 
   # GET /contacts/1/edit
   def edit
+    @subject_contacts = SubjectContact.all
   end
 
   # POST /contacts
   # POST /contacts.json
   def create
+    @subject_contacts = SubjectContact.all
     @contact = Contact.new(contact_params)
 
     respond_to do |format|

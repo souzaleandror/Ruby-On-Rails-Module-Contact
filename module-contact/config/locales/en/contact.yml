@@ -29,9 +29,18 @@ en:
         accepted: "Accepted"
   contact_mailer:
     automatic_answer:
-      thank_you_for_contact: "Thank You For Contact"  
+      thank_you_for_contact: "Thank You For Contact" 
+    manual_answer:
+      thank_you_for_contact: "Thank You For Contact" 
   mailers:
     contact_mailer:
+      manual_answer:
+        hi: "Hi"
+        thank_you_for_contact: "Thank You For Contact"
+        we_will_respond_as_soon_as_possible: "We will respond as soon as possible"
+        fail_send_your_message: "Fail Send Your Message"
+        try_again_later: "Try Again Later"
+        go_back: "Go Back"
       automatic_answer:
         hi: "Hi"
         thank_you_for_contact: "Thank You For Contact"

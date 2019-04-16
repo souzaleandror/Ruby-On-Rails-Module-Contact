@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     
     #get '/welcome/answer_contact', to: "welcome#answer_contact", :param => :id
     get 'welcome/answer_contact/:id', :to => 'welcome#answer_contact', :as => "answer_contact"
-    # post 'welcome/send_answer_contact'
+    post 'welcome/send_answer_contact'
     
     devise_for :admins, 
             path: '', 

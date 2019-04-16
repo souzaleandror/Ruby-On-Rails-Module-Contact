@@ -25,6 +25,12 @@ TSUBCON5 = SubjectContact.create(name: 'Errors', variable_name: 'Errors', inacti
 TSUBCON6 = SubjectContact.create(name: 'Others', variable_name: 'Others', inactive: false)
 puts 'END Subject Contact'
 
+puts 'START Contact'
+Contact.create(name: 'Emilio', email: 'emilio@gmail.com', phone: '(55) 11 91234-1234', message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', accepted: true, newsletter: true, automatic_answer: true, manual_answer: false)
+Contact.create(name: 'jonh', email: 'jonh@gmail.com', phone: '(55) 11 91234-1234', message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', accepted: true, newsletter: false, automatic_answer: true, manual_answer: false)
+Contact.create(name: 'maria', email: 'maria@gmail.com', phone: '(55) 11 91234-1234', message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', accepted: true, newsletter: true, automatic_answer: true, manual_answer: false)
+puts 'END Contact'
+
 puts 'END STADANTARD ENGLISH'
 
 puts 'START STADANTARD PT'

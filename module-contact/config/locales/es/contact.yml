@@ -29,10 +29,19 @@ es:
         accepted: "Aceptado"
   contact_mailer:
     automatic_answer:
-      thank_you_for_contact: "Gracias por el contacto contigo"  
+      thank_you_for_contact: "Gracias por el contacto contigo" 
+    manual_answer:
+      thank_you_for_contact: "Gracias por el contacto contigo" 
   mailers:
     contact_mailer:
       automatic_answer:
+        hi: "Hola"  
+        thank_you_for_message: "Gracias por tu mensaje"
+        we_will_respond_as_soon_as_possible: "Le responderemos lo antes posible"
+        fail_send_your_message: "No enviar su mensaje"
+        try_again_later: "Inténtalo de nuevo más tarde"
+        go_back: "Regresa"
+      manual_answer:
         hi: "Hola"  
         thank_you_for_message: "Gracias por tu mensaje"
         we_will_respond_as_soon_as_possible: "Le responderemos lo antes posible"

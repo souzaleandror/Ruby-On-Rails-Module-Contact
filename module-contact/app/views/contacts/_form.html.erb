@@ -11,57 +11,66 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :subject %>
-    <%= form.text_field :subject %>
-  </div>
-
-  <div class="field">
-    <%= form.label :subject_contact_id %>
-    <%= form.text_field :subject_contact_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :message %>
-    <%= form.text_area :message %>
-  </div>
-
-  <div class="field">
-    <%= form.label :accepted %>
-    <%= form.check_box :accepted %>
-  </div>
-
-  <div class="field">
-    <%= form.label :newsletter %>
-    <%= form.check_box :newsletter %>
-  </div>
-
-  <div class="field">
-    <%= form.label :automatic_answer %>
+    <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+      <%= form.label :name, class: "required_colon" %><br />
+      <%= form.text_field :name, class: 'form-control', placeholder: t('.p_name'), required: true, pattern: '.{3,64}', maxlength: 64, minlength: 3, id: 'form_contact_name', 'data-purpose' => 'name', 'aria-invalid' => 'true', autofocus: true, tabindex: 1 %>
+    </div>
+  
+    <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+      <%= form.label :email, class: "required_colon" %><br />
+      <%= form.email_field :email, class: 'form-control lower_case', placeholder: t('.p_email'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 2 %>
+    </div>
+  
+    <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+      <%= form.label :phone, class: "colon" %><br />
+      <%= form.text_field :phone, class: 'form-control', placeholder: t('.p_phone'), pattern: '.{3,20}', maxlength: 20, minlength: 5, id: 'form_contact_phone', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 3 %>
+    </div>
+  
+    <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+      <%= form.label :subject, class: "required_colon" %><br />
+      <%= form.text_field :subject, class: 'form-control', placeholder: t('.p_subject'), required: true, pattern: '.{3,20}', maxlength: 20, minlength: 3, id: 'form_contact_subject', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 4 %>
+    </div>
+    
+    <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+      <%= form.label :subject_contact_id, class: "colon" %><br />
+      <%= form.select(:subject_contact_id, @subject_contacts.all.collect {|p| [ p.name, p.id ] }, {include_blank: (t('.select') + ' ' + t('.subject'))}, {:class => "form-control"}) %>
+    </div>
+  
+    <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+      <%= form.label :message, class: "required_colon" %><br />
+      <%= form.text_area :message, class: 'form-control', placeholder: t('.p_message'), required: true, pattern: ".{3,}", maxlength: 500, size: 500, minlength: 3, id: 'form_contact_message', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 5 %>
+    </div>
+  
+    <div class="row m_top_10 col-md-4 mx-auto">
+      <%= form.check_box :newsletter, class: 'form-check-input', checked: 'checked', id: 'form_register_newsletter', tabindex: 6 %>
+      <label class="form-check-label" for="form_register_newsletter">
+        <%= t('.register_newsletter') %>
+      </label>
+    </div>
+  
+    <div class="row m_top_10 col-md-4 mx-auto">
+      <%= form.check_box :accepted, class: 'form-check-input', required: true, checked: 'checked', id: 'form_register_terms_and_privacy', tabindex: 7 %>
+      <label class="form-check-label b_required" for="form_register_terms_and_privacy">
+        <%= t('.accepted') %> 
+        <%= link_to t('.term_contact'), '#' %> 
+      </label>
+    </div>
+  
+  <div class="row m_top_10 col-md-4 mx-auto">
     <%= form.check_box :automatic_answer %>
+    <label class="form-check-label b_required" for="form_register_terms_and_privacy">
+      <%= form.label :automatic_answer %>
+    </label>
   </div>
-
-  <div class="field">
-    <%= form.label :manual_answer %>
+  
+  <div class="row m_top_10 col-md-4 mx-auto">
     <%= form.check_box :manual_answer %>
+    <label class="form-check-label b_required" for="form_register_terms_and_privacy">
+      <%= form.label :manual_answer %>  
+    </label>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.submit t('.send'), class: "btn btn-info btn-lg btn-block", tabindex: 8 %>
   </div>
 <% end %>
