@@ -4,6 +4,9 @@ Project Contact.<br/>
 Simple Contact Form With Validation and I18n.<br/>
 Send Email of "Thank You For Contact" with specific idiom and Manual Send Email of Answer.<br/>
 
+Heroku (Live Demo):<br>
+https://module-contact.herokuapp.com/
+
 I18n available's languages: |en|de|es|it|pt|fr|<br/>
 Send Email with SMTP (Gmail).<br/>
 
@@ -23,11 +26,11 @@ $ rake db:drop db:create db:migrate db:seed<br/>
 $ rails s or rails s -p $PORT -b $IP<br/>
 
 Access your browser: http://0.0.0.0:8080 or http://localhost:8080<br/>
-For test send email preview: http://localhost:8080/rails/mailers/contact
+For test send email preview: http://localhost:8080/rails/mailers/contact<br>
 
-Admin's Area:
-Login: admin@admin.com
-Password: admin123
+Admin's Area:<br>
+Login: demo@demo.com<br>
+Password: demo123<br>
 
 Ruby Version:<br/>
 Ruby 2.4.5p335 (2018-10-18 revision 65137) [x86_64-linux]<br/>
@@ -46,6 +49,6 @@ Globalize<br/>
 Faker<br/>
 Rspec<br/>
 
-sudo service postgresql start
-rails s -p $PORT -b $IP
-heroku restart; heroku pg:reset DATABASE --confirm APP-NAME; heroku run rake db:migrate; heroku run rake db:seed;
+sudo service postgresql start<br>
+rails s -p $PORT -b $IP <br>
+heroku restart; heroku pg:reset DATABASE --confirm APP-NAME; heroku run rake db:migrate; heroku run rake db:seed; <br>
