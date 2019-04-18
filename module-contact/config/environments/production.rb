@@ -88,7 +88,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   # ActionMailer Config in development/production rb file
-  config.action_mailer.default_url_options = { :host => 'https://module-contact.herokuapp.com/fr' }
+  config.action_mailer.default_url_options = { :host => 'https://module-contact.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
   # change to true to allow email to be sent during development
   config.action_mailer.perform_deliveries = true

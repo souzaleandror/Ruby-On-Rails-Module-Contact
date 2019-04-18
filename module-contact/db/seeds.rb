@@ -9,9 +9,11 @@ SubjectContact.destroy_all
 Contact.destroy_all
 puts 'END DESTROY ALL'
 
+puts 'CREATE ADMINS'
 Admin.create(email: 'demo@demo.com', password: 'demo123')
 Admin.create(email: 'hello@hello.com', password: 'hello123')
 Admin.create(email: 'admin@admin.com', password: 'admin123')
+puts 'END ADMINS'
 
 puts 'START STADANTARD ENGLISH'
 I18n.locale = :en
