@@ -1,0 +1,2 @@
+module TermContactHelper
+end

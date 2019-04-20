@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
     root 'home#index'
     post 'home/create_contact', to: 'home#create_contact', :as => :create_contact   
+    get 'term_contact/index'
     
     resources :subject_contacts
     resources :contacts

@@ -12,6 +12,7 @@ class HomeController < ApplicationController
       if @contact.save
         ContactMailer.automatic_answer(@contact).deliver
         @contact.update(automatic_answer: true )
+        
         # if you have model Newsletter
         # if (@contact.newsletter == true) && (!Newsletter.find_by_email(@contact.email)) then
         #   Newsletter.create(name: @contact.name, email: @contact.email, inactive: false).save!
@@ -19,7 +20,8 @@ class HomeController < ApplicationController
         
         format.html { redirect_to root_path, notice: "#{t('.thank_you_for_message')} \\n #{t('.we_will_respond_as_soon_as_possible')}" }
       else
-        format.html { redirect_to root_path, notice: "#{t('.thank_you_for_message')} \\n #{t('.we_will_respond_as_soon_as_possible')}" }
+        flash[:error] = "Your Message Not Send Was Successfully. Try again."
+        format.html { redirect_to root_path }
       end
     end
   end

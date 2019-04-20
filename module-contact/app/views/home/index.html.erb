@@ -34,18 +34,18 @@
         <%= f.text_area :message, class: 'form-control', placeholder: t('.p_message'), required: true, pattern: ".{3,}", maxlength: 500, size: 500, minlength: 3, id: 'form_contact_message', 'data-purpose' => 'name', 'aria-invalid' => 'true', tabindex: 5 %>
       </div>
 
-      <div class="row m_top_10 col-md-4 mx-auto">
+      <div class="row m_top_10 col-md-3 mx-auto text-center">
         <%= f.check_box :newsletter, class: 'form-check-input', checked: 'checked', id: 'form_register_newsletter', tabindex: 6 %>
         <label class="form-check-label" for="form_register_newsletter">
           <%= t('.register_newsletter') %>
         </label>
       </div>
 
-      <div class="row m_top_10 col-md-4 mx-auto">
+      <div class="row m_top_10 col-md-3 mx-auto text-center">
         <%= f.check_box :accepted, class: 'form-check-input', required: true, checked: 'checked', id: 'form_register_terms_and_privacy', tabindex: 7 %>
         <label class="form-check-label b_required" for="form_register_terms_and_privacy">
           <%= t('.accepted') %> 
-          <%= link_to t('.term_contact'), '#' %> 
+          <%= link_to t('.term_contact'), term_contact_index_path %> 
         </label>
       </div>
 
