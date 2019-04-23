@@ -11,8 +11,8 @@ class HomeController < ApplicationController
     respond_to do |format|
       if @contact.save
         ContactMailer.automatic_answer(@contact).deliver
-        @contact.update(automatic_answer: true )
-        
+        @contact.update(automatic_answer: true)
+
         # if you have model Newsletter
         # if (@contact.newsletter == true) && (!Newsletter.find_by_email(@contact.email)) then
         #   Newsletter.create(name: @contact.name, email: @contact.email, inactive: false).save!

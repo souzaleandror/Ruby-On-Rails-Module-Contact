@@ -63,9 +63,15 @@
   </div>
   
   <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
-    <%= form.label :answer, class: "required_colon" %><br />
-    <%= form.text_area :answer, class: 'form-control lower_case', placeholder: t('.p_answer'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 10, autofocus: true, required: true, pattern: '.{3,500}', minlength: 3, maxlength: 500 %>
+    <%= form.label ::subject_answer, class: "colon" %><br />
+    <%= form.text_field ::subject_answer, class: 'form-control lower_case', placeholder: t('.p_:subject_answer'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', maxlength: 64, minlength: 7, id: 'form_contact_:subject_answer', 'data-purpose' => ':subject_answer', 'aria-invalid' => 'true', tabindex: 10, autofocus: true, required: true, pattern: '.{3,500}', minlength: 3, maxlength: 100 %>
   </div>
+  
+  <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
+    <%= form.label :answer, class: "required_colon" %><br />
+    <%= form.text_area :answer, class: 'form-control lower_case', placeholder: t('.p_answer'), required: true, pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', axlength: 64, minlength: 7, id: 'form_contact_email', 'data-purpose' => 'email', 'aria-invalid' => 'true', tabindex: 10, autofocus: true, required: true, pattern: '.{3,500}', minlength: 3, maxlength: 500 %>
+  </div>
+  
   <%= hidden_field(:contact, :id, :value => params[:id]) %>
   <div class="row m_top_10 col-md-4 mx-auto d-flex justify-content-center">
     <%= form.submit t('.send'), class: "btn btn-info btn-lg btn-block", tabindex: 2 %>

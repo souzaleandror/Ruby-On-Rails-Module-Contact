@@ -8,7 +8,7 @@ Heroku (Live Demo):<br>
 https://module-contact.herokuapp.com/
 
 I18n available's languages: |en|de|es|it|pt|fr|<br/>
-Send Email with SMTP (Gmail).<br/>
+Send Email with SMTP (Gmail's Account).<br/>
 
 ** IMPORTANT CONFIG YOUR EMAIL **<br/>
 development.rb<br/>
@@ -16,6 +16,7 @@ production.rb<br/>
 test.rb<br/>
 In Gmail Account to enable 'Less secure APP' in 'Google's Account' => Security<br>
 If you don't config your Gmail's Account don't work send the emails<br>
+After access: https://accounts.google.com/b/0/DisplayUnlockCaptcha and enabled.
 
 Command for you use:<br/>
 $ sudo service postgresql start <br/>

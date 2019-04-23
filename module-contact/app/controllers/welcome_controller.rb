@@ -17,6 +17,7 @@ class WelcomeController < ApplicationController
   def send_answer_contact
     @contact = answer_params
     @answer = @contact[:answer]
+    @subject_answer = @contact[:subject_answer]
     @contact = Contact.find_by_id(@contact[:id])
     
     if @contact.blank? then
@@ -52,7 +53,7 @@ class WelcomeController < ApplicationController
   
   # Never trust parameters from the scary internet, only allow the white list through.
   def answer_params
-    params.require(:contact).permit(:id, :answer)
+    params.require(:contact).permit(:id, :subject_answer, :answer)
   end
   
 end

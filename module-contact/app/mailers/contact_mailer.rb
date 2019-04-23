@@ -7,9 +7,10 @@ class ContactMailer < ApplicationMailer
     mail(to: @contact.email, from: ["Module Contact - No Reply <no-replay@module-contact.com>"], cc: "lrs.estudos@gmail.com", subject: t('.thank_you_for_contact'))
   end
   
-  def manual_answer(contact, answer, admin)
+  def manual_answer(contact, answer, subject_answer, admin)
     @contact = contact
     @answer = answer
+    @subject_answer = subject_answer
     @admin = admin
     mail(to: @contact.email, from: ["Module Contact <#{@admin.email}>"], cc: "lrs.estudos@gmail.com", subject: t('.thank_you_for_contact'))
   end
