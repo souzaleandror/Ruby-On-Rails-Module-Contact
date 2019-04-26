@@ -1,5 +1,8 @@
 # encoding: utf-8
 en:
+  term_contact:
+    index:
+      term_contact: "Term Contact"
   home:
     index:
       contact: "Contact"
